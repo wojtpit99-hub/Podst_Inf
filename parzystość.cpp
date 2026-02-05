@@ -1,17 +1,20 @@
 #include <iostream>
-
 using namespace std;
-int liczba;
 
-int main() {
+int main()
+{
+    int a;
+    cout << "Podaj dowolna liczbe: " << endl; 
+    cin >> a;
+    
+    if(a % 2 == 0)
+    {
+        cout << "Liczba jest parzysta!" << endl;
+    }
 
-    cout << "Podaj liczbe: ";
-    cin >> liczba;
-
-    if (liczba % 2 == 0) {
-        cout << liczba << " jest liczba parzysta" << endl;
-    } else {
-        cout << liczba << " jest liczba nieparzysta" << endl;
+    else
+    {
+        cout << "Liczba nie jest parzysta!" << endl;
     }
 
     return 0;
