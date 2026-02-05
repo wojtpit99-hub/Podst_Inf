@@ -1,24 +1,26 @@
 #include <iostream>
-
 using namespace std;
-
-
 
 int main()
 {
-    int liczba;
-    cout << "Podaj liczbe: " << endl;
-    cin >> liczba;
-
-    try{
-
-    if(liczba % 2 !=0)
+    int a;
+    cout << "Podaj dowolna liczbe: " << endl; 
+    cin >> a;
+    
+    try
     {
-        throw 404;
+        if(a % 2 != 0)
+        {
+            throw 404;
+        }
+        else
+        {
+            cout << "Liczba jest parzysta!" << endl;
+        }
     }
-    }
-    catch(int e){
-    cout << "ERROR: " << e << endl;
+    catch(int e)
+    {
+        cout << "ERROR " << e << endl;
     }
 
     return 0;
