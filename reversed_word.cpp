@@ -1,21 +1,21 @@
 #include <iostream>
-#include <string>
-
 using namespace std;
 
 int main()
 {
-    string slowo, reversed = "";
+    string slowo;
 
     cout << "Podaj slowo: ";
     cin >> slowo;
 
-    int dlugosc_slowa = slowo.length();
-    for (int i = dlugosc_slowa - 1; i >= 0; i--) {
-        reversed += slowo[i];
+    string odwrocone;
+
+    for(int i = slowo.length(); i >= 0; i--)
+    {
+        odwrocone += slowo[i];
     }
 
-    cout << "Slowem odwroconym jest: " << reversed << endl;
+    cout << "Twoje slowo od tylu to: " << odwrocone << endl;
 
     return 0;
 }
