@@ -1,34 +1,40 @@
 #include <iostream>
 #include <fstream>
-#include <string>
-
 using namespace std;
 
-class Person {
+class Osoba
+{
 public:
-    string name;
-    int age;
+    string imie;
+    string nazwisko;
+    int wiek;
 
-    Person() : name(""), age(0) {}
-    Person(string name, int age) : name(name), age(age) {}
+    Osoba() : imie(""), nazwisko(""), wiek(0) {}
+    Osoba(string imie, string nazwisko, int wiek) : imie(imie), nazwisko(nazwisko), wiek(wiek) {}
 };
 
-int main() {
-    Person p1("John Doe", 30);
-    Person p2("Jane Doe", 25);
-    Person p3("Bob Smith", 45);
 
-    ofstream outFile("persons.txt");
-    if (outFile.is_open()) {
-        outFile << p1.name << " " << p1.age << endl;
-        outFile << p2.name << " " << p2.age << endl;
-        outFile << p3.name << " " << p3.age << endl;
-        outFile.close();
-        cout << "Zapis do pliku udany." << endl;
-    } else {
-        cout << "Error: Nie udalo sie otworzyc pliku." << endl;
+int main()
+{
+    Osoba o1("Wojciech", "Kozmicki", 20);
+    Osoba o2("Marta", "Kozlowska", 25);
+    Osoba o3("Marcin", "Myszka", 44);
+
+    ofstream file ("dane.txt", ios::app);
+    if(file.is_open())
+    {
+        file << "Imie i nazwisko: " << o1.imie << " " << o1.nazwisko << " Wiek: " << o1.wiek << endl;
+        file << "Imie i nazwisko: " << o2.imie << " " << o2.nazwisko << " Wiek: " << o2.wiek << endl;
+        file << "Imie i nazwisko: " << o3.imie << " " << o3.nazwisko << " Wiek: " << o3.wiek << endl;
+        file.close();
+
+        cout << "udalo sie zapisac dane.";
     }
+    else
+    {
+        cout << "nie udalo sie otworzyc pliku.";
+    }
+
 
     return 0;
 }
-
