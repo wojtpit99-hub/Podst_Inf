@@ -1,20 +1,22 @@
 #include <iostream>
-#include <string>
-
 using namespace std;
 
-int main() {
+int main()
+{
     string slowo;
 
-    cout << "Podaj slowo: ";
+    cout << "Podaj slowo do 10 liter: ";
     cin >> slowo;
 
-    if (slowo.length() > 10) {
-        cout << "Blad: slowo ma powyzej 10 liter." << endl;
-        return 1;
+    if(slowo.length() > 10)
+    {
+        cout << "Blad podane slowo ma ponad 10 liter!";
+    }
+    else
+    {
+        cout << "Podales slowo do 10 liter!";
     }
 
-    cout << "Wprowadzone slowo to: " << slowo << endl;
 
     return 0;
 }
