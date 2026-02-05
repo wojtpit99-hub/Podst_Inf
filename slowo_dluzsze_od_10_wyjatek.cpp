@@ -1,27 +1,28 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    const int max_word = 10;
-    string imie;
+    string slowo;
 
-    cout << "Podaj imie: ";
-    cin >> imie;
+    cout << "podaj slowo do 10 liter: ";
+    cin >> slowo;
 
     try
     {
-        if (imie.length() > max_word)
-            {
-            throw "Blad: Imie jest za dlugie!";
-            }
-        cout << "Podane imie: " << imie << endl;
-    }
-        catch (const char* blad)
+        if(slowo.length() > 10)
         {
-        cout << blad << endl;
+            throw "zbyt dlugie slowo!";
         }
+        else
+        {
+            cout << "Podales slowo do 10 liter!";
+        }
+    }
+    catch(const char* msg)
+    {
+        cout << "ERROR: " << msg;
+    }
 
     return 0;
 }
