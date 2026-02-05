@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class figura
+{
+public:
+    virtual void rysuj() // to musi być virtual aby kwadrat mógł zmienić tą funkcje
+    {
+        cout << "Rysuje figure." << endl;
+    }
+};
+
+class kwadrat : public figura
+{
+public:
+    void rysuj()
+    {
+        cout << "Rysuje kwadrat." << endl;
+    }
+};
+
+int main()
+{
+    figura* f1 = new figura();
+    figura* k1 = new kwadrat();
+
+    f1->rysuj();
+    k1->rysuj();
+    return 0;
+}
