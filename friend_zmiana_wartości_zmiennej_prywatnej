@@ -1,30 +1,30 @@
 #include <iostream>
-
 using namespace std;
 
-class A
+class Obiekt
 {
-
 private:
     int x;
 public:
-    A(int x) : x(x) {}
-    friend void zmien_x(A& a, int new_x); // deklaracja funkcji zaprzyja�nionej
+    Obiekt(int x) : x(x) {}
+    friend void zmiana_x(Obiekt & o, int new_x);
     void pokaz_x()
     {
-        cout << "Wartosc x: " << x << endl;
+        cout << "Wartosc zmiennej x: " << x << endl;
     }
 };
 
-void zmien_x(A& a, int new_x) { // definicja funkcji zaprzyja�nionej
-    a.x = new_x;
+void zmiana_x(Obiekt & o, int new_x)
+{
+    o.x = new_x;
 }
 
 int main()
 {
-    A obj(10);
-    obj.pokaz_x();
-    zmien_x(obj, 20);
-    obj.pokaz_x();
+    Obiekt Obj(5);
+    Obj.pokaz_x();
+    zmiana_x(Obj, 10);
+    Obj.pokaz_x();
+
     return 0;
 }
