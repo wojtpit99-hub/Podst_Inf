@@ -4,33 +4,36 @@ using namespace std;
 
 int main()
 {
-    int tablica[5][5];
-    for(int i=0; i<5; i++)
+    int tab[5][5];
+
+    for(int i = 0; i < 5; i++)
     {
-        for(int j=0;j<5;j++)
+        for(int j = 0; j < 5; j++)
         {
-            if(i==j)
+            if(i==j) 
             {
-                tablica[i][j]=i+j;
+                tab[i][j] = i+j;
             }
-            else if(i<j)
+            else if (i > j)
             {
-                tablica[i][j]=0;
+                tab[i][j] = 1;
             }
             else
             {
-                tablica[i][j]=1;
+                tab[i][j] = 0;
             }
         }
     }
-    for(int i=0; i<5; i++)
+
+    for(int i = 0; i < 5; i++)
     {
-        for(int j=0; j<5;j++)
+        for(int j = 0; j < 5; j++)
         {
-            cout << tablica[i][j] << " ";
+           cout << tab[i][j] << " ";
         }
-        cout << "COZAG00wno" << endl;
+        cout << endl;
     }
 
-    return 0;
+
+return 0;
 }
