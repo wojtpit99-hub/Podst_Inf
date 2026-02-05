@@ -1,31 +1,29 @@
 #include <iostream>
-
 using namespace std;
 
-const int MAX_SIZE = 10;
+const int max_pojemnosc = 10;
 
 int main()
 {
-    int tab[MAX_SIZE];
+    int tab[max_pojemnosc];
     int n = 0;
 
     try
     {
-        for (int i = 0; i < MAX_SIZE + 1; i++)
+        for (int i = 0; i < max_pojemnosc + 2; i++)
+        {
+            if (n > max_pojemnosc)
             {
-            if (n >= MAX_SIZE)
-            {
-                throw "Tablica jest przepe³niona!";
+                throw "tablica przepelniona";
             }
-            cout << "Podaj liczbe: ";
+            cout << "podaj liczbe: ";
             cin >> tab[n++];
         }
     }
-    catch (const char* msg)
+    catch (char const* msg)
     {
         cout << "ERROR: " << msg << endl;
     }
 
     return 0;
 }
-
