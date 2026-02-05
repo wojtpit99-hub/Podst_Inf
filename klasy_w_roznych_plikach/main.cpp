@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    Klasa_A();
-    Klasa_B();
+    Klasa_A objA;
+    Klasa_B objB;
 
     return 0;
 }
