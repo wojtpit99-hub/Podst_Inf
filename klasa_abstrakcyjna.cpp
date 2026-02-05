@@ -1,23 +1,26 @@
 #include <iostream>
-
 using namespace std;
 
-class X
+class Wirtualna
 {
-    public:
-        virtual void egzamin(void) = 0;
+public:
+    virtual void egzamin() = 0;
 };
 
-class Y : public X
+class Klasa : public Wirtualna
 {
-    public:
-        void egzamin(void)
-        {
-            cout << "Klasa abstrakcyjna, która zdala mi egzamin" << endl;
-        }
+public:
+    void egzamin()
+    {
+        cout << "Jestem klasa abstrakcyjna" << endl;
+    }
 };
+
 
 int main()
 {
+    Wirtualna* Obiekt = new Klasa();
 
+    Obiekt->egzamin();
+    return 0;
 }
