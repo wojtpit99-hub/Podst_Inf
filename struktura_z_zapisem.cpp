@@ -54,11 +54,18 @@ void WyswietlDane(int i)
 
 void Zapis(int i)
 {
-    ofstream save ("Kontakty.txt", ios::app);
-    save << "Imie: " << tablica[i].imie << " " << " Nazwisko: " << tablica[i].nazwisko << endl;
-    save << "Wiek: " << tablica[i].wiek << endl;
-    save << "Nr telefonu: " << tablica[i].telefon << endl;
-    save.close();
+    ofstream file ("Kontakty.txt", ios::app);
+    if(file.is_open())
+    {
+        file << "Imie: " << tablica[i].imie << " " << " Nazwisko: " << tablica[i].nazwisko << endl;
+        file << "Wiek: " << tablica[i].wiek << endl;
+        file << "Nr telefonu: " << tablica[i].telefon << endl;
+    }
+    else
+    {
+        cout << "Blad podczas otwierania pliku." << endl;
+    }
+    file.close();
 }
 
 int main()
