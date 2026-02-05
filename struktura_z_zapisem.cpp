@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-
 using namespace std;
 
 struct Kontakty
@@ -9,72 +8,73 @@ struct Kontakty
     string nazwisko;
     int wiek;
     string telefon;
-
 };
 
-const int zakres = 2;
-Kontakty tablica[zakres];
+const int rozmiar = 2;
+Kontakty tablica[rozmiar];
 
-wprowadzImie(int i)
+void WprowadzImie(int i)
 {
-    cout << "Imie: "; //<< tablica[i].imie << endl;
+    cout << "Podaj imie: ";
     cin >> tablica[i].imie;
 }
 
-wprowadznazwisko(int i)
+void WprowadzNazwisko(int i)
 {
-    cout << "Nazwisko: ";
+    cout << "Podaj nazwisko: ";
     cin >> tablica[i].nazwisko;
 }
 
-wprowadzWiek(int i)
+void WprowadzWiek(int i)
 {
-    cout << "Wiek: ";
+    cout << "Podaj wiek: ";
     cin >> tablica[i].wiek;
 }
 
-wprowadzTelefon(int i)
+void WprowadzTelefon(int i)
 {
-    cout << "Telefon: ";
+    cout << "Podaj numer telefonu: ";
     cin >> tablica[i].telefon;
 }
 
-wprowadzDane(int i)
+void WprowadzDane(int i)
 {
-wprowadzImie(i);
-wprowadznazwisko(i);
-wprowadzWiek(i);
-wprowadzTelefon(i);
-
+    WprowadzImie(i);
+    WprowadzNazwisko(i);
+    WprowadzWiek(i);
+    WprowadzTelefon(i);
 }
 
-wyswietlDane(int i)
+void WyswietlDane(int i)
 {
-    cout << "Imie: " << tablica[i].imie << endl;
-    cout << "Nazwisko: " << tablica[i].nazwisko << endl;
+    cout << "Imie: " << tablica[i].imie << " " << " Nazwisko: " << tablica[i].nazwisko << endl;
     cout << "Wiek: " << tablica[i].wiek << endl;
-    cout << "Telefon: " << tablica[i].telefon << endl;
+    cout << "Nr telefonu: " << tablica[i].telefon << endl;
 }
-Zapis(int i)
+
+void Zapis(int i)
 {
-ofstream save ("tablica.txt", ios::app);
-save << "Imie: " << tablica[i].imie << endl;
-save << "Nazwisko: " << tablica[i].nazwisko << endl;
-save << "Wiek: " << tablica[i].wiek << endl;
-save << "Telefon: " << tablica[i].telefon << endl;
+    ofstream save ("Kontakty.txt", ios::app);
+    save << "Imie: " << tablica[i].imie << " " << " Nazwisko: " << tablica[i].nazwisko << endl;
+    save << "Wiek: " << tablica[i].wiek << endl;
+    save << "Nr telefonu: " << tablica[i].telefon << endl;
+    save.close();
 }
 
 int main()
 {
-    for(int i=0; i<zakres; i++)
-        {
-            wprowadzDane(i);
-            Zapis(i);
-        }
-    for(int i=0; i<zakres; i++)
+
+    for(int i = 0; i < rozmiar; i++)
     {
-        wyswietlDane(i);
+        WprowadzDane(i);
+        Zapis(i);
     }
+
+    for(int i = 0; i < rozmiar; i++)
+    {
+        cout << "Kontakt nr: " << i+1 << endl;
+        WyswietlDane(i);
+    }
+
     return 0;
 }
-
